@@ -56,24 +56,9 @@ int data_output(int n_roots, double x1, double x2){
 int data_entry(double * caf_one, double * caf_two, double * caf_three) {
     
     printf("Enter rational numbers for first сoefficient,\nsecond coefficient, and third coefficient:"); 
-    
-    double c_one = 0;
-    double c_two = 0;
-    double c_three = 0;
-    int correct = 0;
-
-    while (correct != 3) {
-
-        correct = scanf ("%lg, %lg, %lg", c_one, c_two, c_three);
-
-        if (correct != 3){
-            printf("You have an input error, please enter the correct values!")
-        }
+    while (scanf ("%lg, %lg, %lg", c_one, c_two, c_three) != 3) {
+        printf("You have an input error, please enter the correct values!");
     }
-     
-     caf_one = c_one;
-     caf_two = c_two;
-     caf_three = c_three;
         
 }
 
