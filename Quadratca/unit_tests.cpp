@@ -6,7 +6,7 @@
 #include "users_interaction.h"
 #include "unit_tests.h"
 
-
+bool is_error  = true;
 
 struct Separate_test
 {   
@@ -27,7 +27,6 @@ Separate_test Tests [] =     {{{  1,  2,  -3, 0, 0, 0}, TWO_ROOTS,    1,   -3},
                               {{  4, -8,   0, 0, 0, 0}, TWO_ROOTS,    0,    2},
                               {{  1, -1,  -6, 0, 0, 0}, TWO_ROOTS,    3,  -2}}; //это подгон(из за округления)
 
-int is_right [] = {0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 /*Check responses*/
 
@@ -44,8 +43,11 @@ bool Is_right_answer(Separate_test test, int i) {
     return true;
 }
 
-void Mistake_print() {
- //pass
+void Mistake_print(int a, Separate_test Tests []) {
+    printf("\n-------------------------------------------------------------------\n\n");
+    printf("Answer number %d is incorect!!!, please check more detailed!\n", a+1);
+    printf("Yor answer: first root = %.2f, second root = %.2f , number of roots = %i\n", Tests[a].component.x1, Tests[a].component.x2, Tests[a].component.n_roots);
+    printf("Right answer: first root = %.2f, second root = %.2f , number of roots = %i\n", Tests[a].x1_right, Tests[a].x2_right, Tests[a].n_roots_right);
 }
 
 int Run_tests() {
@@ -54,13 +56,16 @@ int Run_tests() {
         if (Is_right_answer(Tests[i] , i)) {
             continue;
         } else {
-            printf("Answer number %d is incorect!!!, please check more detailed!\n", i+1);
-            printf("Yor answer: first root = %.2f, second root = %.2f , number of roots = %i\n", Tests[i].component.x1, Tests[i].component.x2, Tests[i].component.n_roots);
-            printf("Right answer: first root = %.2f, second root = %.2f , number of roots = %i\n", Tests[i].x1_right, Tests[i].x2_right, Tests[i].n_roots_right);
-            return 0;
+            Mistake_print(i, Tests);
+            is_error = false;
         }
     }
-    printf("Check completed, all correct!\n");
+    printf("\n-------------------------------------------------------------------\n\n");
+    if (is_error) {
+        printf("Check completed, all correct!\n");
+        printf("\n-------------------------------------------------------------------\n\n");
+    }
+    
     return 1;
 
 }
