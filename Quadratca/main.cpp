@@ -5,7 +5,7 @@
 #include "solve_square.h"
 #include "input_output.h"
 
-
+// TODO: check for struct argument
 int main()
 {   
     /*initialization and entering variables*/
@@ -22,3 +22,7 @@ int main()
 
     return 0;
 }
+
+
+s 
+s[1] = {}

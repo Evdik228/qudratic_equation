@@ -1,5 +1,5 @@
 #ifndef  __HEADER__
-#define  __HEADER__
+#define  __HEADER__ // TODO: rename
 
 struct quadratic_components 
 {

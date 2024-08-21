@@ -8,7 +8,7 @@
 /*function initialization*/
 
 bool Comparison_zero(double a){
-    double EPSILON = 00000.1;
+    const double EPSILON = 0.00001;
     if (fabs(a) <= EPSILON) {
         return true;
     } else {

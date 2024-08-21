@@ -1,6 +1,6 @@
 
 #ifndef  __INPUT_OUTPUT__
-#define  __INPUT_OUTPUT__
+#define  __INPUT_OUTPUT__ // TODO: rename
 
 #include "header.h"
 
