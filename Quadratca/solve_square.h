@@ -1,7 +1,8 @@
 
-#ifndef  __S_SQUARE_H__
-#define  __S_SQUARE_H__
-#include "header.h"
+#ifndef  __S_SQUARE__
+#define  __S_SQUARE__
+
+#include "users_interaction.h"
 
 int Solves_equation(quadratic_components  *components);
 

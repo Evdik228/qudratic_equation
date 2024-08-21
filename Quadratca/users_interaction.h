@@ -1,5 +1,6 @@
-#ifndef  __HEADER__
-#define  __HEADER__ // TODO: rename
+
+#ifndef  __USERS_INTERACTION__
+#define  __USERS_INTERACTION__
 
 struct quadratic_components 
 {
@@ -8,6 +9,7 @@ struct quadratic_components
     double coef_three;
     double x1;
     double x2;
+    int n_roots;
 };
 
 enum number_for_roots {    
@@ -17,5 +19,9 @@ enum number_for_roots {
     INF_ROOTS = 3,
 }; 
 
+
+
+int data_output(int n_roots, double x1, double x2);
+int data_entry(quadratic_components * components);
 
 #endif

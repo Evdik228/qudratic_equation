@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 #include "solve_square.h"
-#include "header.h"
-#include "input_output.h"
+#include "users_interaction.h"
 
 
 int data_output(int n_roots, double x1, double x2){
