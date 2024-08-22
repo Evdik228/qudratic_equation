@@ -1,4 +1,3 @@
-
 #ifndef  __S_SQUARE__
 #define  __S_SQUARE__
 

@@ -6,21 +6,18 @@
 #include "users_interaction.h"
 #include "unit_tests.h"
 
-
-#define RESET  "\033[0m"
-#define RED    "\033[1;31m"
+#define RESET  "\033[0m"     
+#define RED    "\033[1;31m"   //TODO **Make lib or struct for colors 
 #define GREEN  "\033[1;32m" 
 
 const int number_of_tests = 9;
-int number_right_answer = 0;
 
 struct Separate_test
 {   
     quadratic_components component;
-    int n_roots_right;
-    double x1_right;
-    double x2_right;
-    
+    int                  n_roots_right;
+    double               x1_right;
+    double               x2_right;    
 };
 
 Separate_test Tests [] =     {{{  1,  2,  -3, 0, 0, 0}, TWO_ROOTS,    1,   -3},
@@ -60,7 +57,7 @@ void Mistake_print(int number, Separate_test Tests []) {
 }
 
 int Run_tests() {
-
+    int number_right_answer = 0;
     bool is_error  = true;
 
     for(int number = 0; number < number_of_tests; number++) { 
