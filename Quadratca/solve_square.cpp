@@ -5,17 +5,21 @@
 #include "solve_square.h"
 #include "users_interaction.h"
 
+// TODO: create utils.cpp
 
 /*function initialization*/
 
 bool Comparison_zero(double a){
-    const double EPSILON = 0.00001;
+    const double EPSILON = 0.00001;     // global
     if (fabs(a) <= EPSILON) {
         return true;
-    } else {
-        return false;
     }
+    return false;
 }
+
+// x^2 + 2x = 0 -> x (x + 2)= 0 
+
+// TODO not use struct
 
 int Solve_linear_equation(quadratic_components * components) { 
     if (Comparison_zero(components->coef_two)) {

@@ -7,8 +7,9 @@
 #include "unit_tests.h"
 #include "work_vs_file.h"
 
+// TODO: return type enum not int
 
-int Check_flag(char flag[]) { // TODO return enum 
+int Check_flag(char flag[]) { 
     if (strcmp(sqe, flag) == 0){ 
         return flag_solve_equation; 
     } else if (strcmp(chans, flag) == 0) {
@@ -27,7 +28,7 @@ void Print_help() {
 }
     
 void Solve_equation() {
-    quadratic_components  components = {0, 0, 0, 0, 0, 0};  
+    quadratic_components  components = {};  
     Data_entry(&components);      
     components.n_roots = Solves_equation(&components);
     Data_output(components.n_roots, components.x1, components.x2);
@@ -55,7 +56,7 @@ int Data_output(int n_roots, double x1, double x2){
 }
 
 int Data_entry(quadratic_components * components) {
-    // TODO assert
+    // TODO assert    //TODO many output error
     printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: "); 
     while (scanf ("%lg %lg %lg", &(components->coef_one), &(components->coef_two), &(components->coef_three)) != 3) {
         printf("You have an input error, please enter the correct values!\n");
@@ -63,7 +64,7 @@ int Data_entry(quadratic_components * components) {
         int ch = 0;
         do {
             ch = getchar();
-        } while(isspace(ch) && ch != EOF);
+        } while(!isspace(ch) && ch != EOF);         // TODO: -> func
     }
     return 0;
 }

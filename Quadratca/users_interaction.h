@@ -1,17 +1,21 @@
 #ifndef  __USERS_INTERACTION__
 #define  __USERS_INTERACTION__
 
+// TODO: codestyle for global var
+
 inline const char* sqe = "-sqe";
 inline const char* chans = "-chans";      //спросить про *
 inline const char* file = "-file"; 
 
-struct quadratic_components 
+struct quadratic_components     // TODO: typedef struct
 {
     double coef_one;
     double coef_two;
     double coef_three;
+
     double x1;
     double x2;
+    
     int n_roots;
 };
 

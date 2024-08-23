@@ -33,18 +33,16 @@ Separate_test Tests [] =     {{{  1,  2,  -3, 0, 0, 0}, TWO_ROOTS,    1,   -3},
 
 /*Check responses*/
 
+// TODO: func for compare double value
+
 bool Is_right_answer(Separate_test test) { 
     if (test.component.n_roots == test.n_roots_right){
         if (test.component.x1 == test.x1_right && test.component.x2 == test.x2_right || 
             test.component.x1 == test.x2_right && test.component.x2 == test.x1_right){
             return true;
-        } else {
-            return false;
         }
-    } else {
-        return false;
     }
-    return true;
+    return false;
 }
 
 void Mistake_print(int number, Separate_test Tests []) { 
@@ -55,6 +53,8 @@ void Mistake_print(int number, Separate_test Tests []) {
     printf("Right answer: first root = %.2f, second root = %.2f , number of roots = %i\n",
            Tests[number].x1_right, Tests[number].x2_right, Tests[number].n_roots_right);
 }
+
+// TODO: func for one concrete test
 
 int Run_tests() {
     int number_right_answer = 0;
