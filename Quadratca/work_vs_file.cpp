@@ -1,11 +1,15 @@
 #include <stdio.h>
+#include <assert.h>
+#include <ctype.h>
 
 
 #include "work_vs_file.h"
 #include "solve_square.h"
 #include "users_interaction.h"
 
+
 const char* name_file_right = "file.txt";
+
 
 void Put_data_file(int n_roots, double x1, double x2, FILE *file){
     printf("result on file!\n");
@@ -30,40 +34,30 @@ void Put_data_file(int n_roots, double x1, double x2, FILE *file){
 
 void File_enterface(){
 
-    FILE *file;
+    FILE *file = NULL;
 
     quadratic_components file_components = {};
-
-    //char name_file[1001];
-
-    //printf("Add file name, not more than 1000 symbols: ");
-
-    //fgets(name_file, 1001, stdin);
-    
-    //if (strcmp(name_file, ) == 0)
 
     if ((file = fopen(name_file_right, "r")) == NULL) {
         printf("Can't open file!");
     } 
 
-    fscanf (file ,"%lg %lg %lg", &(file_components.coef_one), &(file_components.coef_two), &(file_components.coef_three)); 
+    fscanf (file ,"%lg %lg %lg", &(file_components.coefficients.coef_one), 
+            &(file_components.coefficients.coef_two), &(file_components.coefficients.coef_three)); 
 
-    file_components.n_roots = Solves_equation(&file_components);
+    Solves_equation(&file_components);
 
     printf("put resalt on file? Y/N \n");
 
     if (getchar() == 'Y'){
         fclose (file); 
-        Put_data_file(file_components.n_roots, file_components.x1, file_components.x2, file);   
+        file = NULL;
+        Put_data_file(file_components.roots.n_roots, file_components.roots.x1, file_components.roots.x2, file);   
     } else {
-        Data_output(file_components.n_roots, file_components.x1, file_components.x2);
+        Data_output(file_components.roots);
     }
 
 
     fclose (file);
-
-
-
-
 
 }

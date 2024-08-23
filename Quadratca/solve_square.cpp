@@ -1,60 +1,53 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdbool.h>
+#include <assert.h>
 
 #include "solve_square.h"
 #include "users_interaction.h"
-
-// TODO: create utils.cpp
+#include "utilits.h"
 
 /*function initialization*/
 
-bool Comparison_zero(double a){
-    const double EPSILON = 0.00001;     // global
-    if (fabs(a) <= EPSILON) {
-        return true;
-    }
-    return false;
-}
+//TODO: isfinite and nan
 
-// x^2 + 2x = 0 -> x (x + 2)= 0 
+int Solve_linear_equation (double * coef_two, double * coef_three, double * x1, int * n_roots) { 
+    assert(coef_two != NULL);
 
-// TODO not use struct
-
-int Solve_linear_equation(quadratic_components * components) { 
-    if (Comparison_zero(components->coef_two)) {
-        components->n_roots = (Comparison_zero(components->coef_three)) ? INF_ROOTS : NO_ROOT;
-        return (Comparison_zero(components->coef_three)) ? INF_ROOTS : NO_ROOT;      
+    if (Comparison_zero(*coef_two)) {
+        *n_roots = (Comparison_zero(*coef_three)) ? INF_ROOTS : NO_ROOT;
     } else {
-         components->x1 = -(components->coef_three) / components->coef_two; 
-         components->n_roots = ONE_ROOT;
-         return ONE_ROOT;
+        *x1 = -(*coef_three) / *coef_two; 
+        *n_roots = ONE_ROOT;
     }
     return 0;
 }
 
 int Solve_quadratic_equation(quadratic_components * components) {
-    double discriminant = (components->coef_two) * (components->coef_two) - 4 * (components->coef_one) * (components->coef_three); 
+    double discriminant = (components->coefficients.coef_two) * (components->coefficients.coef_two)
+                          - 4 * (components->coefficients.coef_one) * (components->coefficients.coef_three); 
 
     if (discriminant < 0) { 
-        components->n_roots = NO_ROOT; 
-        return NO_ROOT;
+        components->roots.n_roots = NO_ROOT; 
     } else if (Comparison_zero(discriminant)) { 
-        components->x1 = -(components->coef_two) / (2 * (components->coef_one));
-        components->n_roots = ONE_ROOT;
-        return ONE_ROOT;
+        components->roots.x1 = -(components->coefficients.coef_two) / (2 * (components->coefficients.coef_one));
+        components->roots.n_roots = ONE_ROOT;
     } else {                                      
-        components->x1 = (-(components->coef_two) - sqrt(discriminant)) / (2 * (components->coef_one));
-        components->x2 = (-(components->coef_two) + sqrt(discriminant)) / (2 * (components->coef_one));
-        components->n_roots = TWO_ROOTS;
-        return TWO_ROOTS;
+        components->roots.x1 = (-(components->coefficients.coef_two) - sqrt(discriminant)) 
+        / (2 * (components->coefficients.coef_one));
+
+        components->roots.x2 = (-(components->coefficients.coef_two) + sqrt(discriminant)) 
+        / (2 * (components->coefficients.coef_one));
+
+        components->roots.n_roots = TWO_ROOTS;
     }
     return 0;
 }
 
-int Solves_equation(quadratic_components  * components) { 
-    if (Comparison_zero(components->coef_one)) {
-        return Solve_linear_equation(components);     
+int Solves_equation(quadratic_components * components) { 
+    if (Comparison_zero(components->coefficients.coef_one)) {
+        return Solve_linear_equation(&components->coefficients.coef_two, &components->coefficients.coef_three,
+                                     &components->roots.x1, &components->roots.n_roots);     
     } else {
         return Solve_quadratic_equation(components);              
     }

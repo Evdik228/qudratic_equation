@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
+#include <stdlib.h>
+#include <assert.h>
 
 #include "solve_square.h"
 #include "users_interaction.h"
 #include "unit_tests.h"
 #include "work_vs_file.h"
+#include "utilits.h"
 
-// TODO: return type enum not int
+
 
 int Check_flag(char flag[]) { 
     if (strcmp(sqe, flag) == 0){ 
@@ -27,46 +30,45 @@ void Print_help() {
     printf("...   -file    ...  scan coefficients from file\n\n");
 }
     
-void Solve_equation() {
-    quadratic_components  components = {};  
-    Data_entry(&components);      
-    components.n_roots = Solves_equation(&components);
-    Data_output(components.n_roots, components.x1, components.x2);
+void Solve_equation() {  
+    quadratic_components components = {};
+    Data_entry(&components.coefficients);      
+    Solves_equation(&components);
+    Data_output(components.roots);
 }
 
 void Another_argument() {
     printf("Incorrect flag, if you don't know flag, add -help\n");
 }
 
-int Data_output(int n_roots, double x1, double x2){
-    switch (n_roots)
+void Data_output(quadratic_roots roots){
+    switch (roots.n_roots)
     {
     case NO_ROOT: printf("No roots \n"); 
         break;
-    case ONE_ROOT: printf("One root: %.2f\n", x1);
+    case ONE_ROOT: printf("One root: %.2f\n", roots.x1);
         break;
-    case TWO_ROOTS: printf("First root:%.2f, Second root:%.2f\n", x1, x2);
+    case TWO_ROOTS: printf("First root:%.2f, Second root:%.2f\n", roots.x1, roots.x2);
         break;
     case INF_ROOTS: printf("infinity roots\n");
         break;
-    default: printf("ERROR, another number of roots:%i\n", n_roots);
+    default: printf("ERROR, another number of roots:%i\n", roots.n_roots);
         break;
     }
-    return 0;
 }
 
-int Data_entry(quadratic_components * components) {
-    // TODO assert    //TODO many output error
+void Data_entry(quadratic_coefficients * coefficients) {
+
     printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: "); 
-    while (scanf ("%lg %lg %lg", &(components->coef_one), &(components->coef_two), &(components->coef_three)) != 3) {
+    while (scanf ("%lg %lg %lg", &(coefficients->coef_one), &(coefficients->coef_two), &(coefficients->coef_three)) != 3) {
         printf("You have an input error, please enter the correct values!\n");
         printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: ");
-        int ch = 0;
-        do {
-            ch = getchar();
-        } while(!isspace(ch) && ch != EOF);         // TODO: -> func
-    }
-    return 0;
+        
+        if (!Clean_boofer()){
+            exit(0);
+        }
+
+    }  
 }
 
 void Terminal_interface(int argc, char *argv[]){ 

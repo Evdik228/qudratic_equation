@@ -3,21 +3,11 @@
 
 // TODO: codestyle for global var
 
+#include "solve_square.h"
+
 inline const char* sqe = "-sqe";
-inline const char* chans = "-chans";      //спросить про *
+inline const char* chans = "-chans";      
 inline const char* file = "-file"; 
-
-struct quadratic_components     // TODO: typedef struct
-{
-    double coef_one;
-    double coef_two;
-    double coef_three;
-
-    double x1;
-    double x2;
-    
-    int n_roots;
-};
 
 enum number_for_roots {    
     NO_ROOT   = 0,
@@ -33,12 +23,12 @@ enum number_flag{
     flag_file = 4,
 };
 
-int Data_output(int n_roots, double x1, double x2);
-int Data_entry(quadratic_components * components);
+void Data_output(quadratic_roots roots);
+void Data_entry(quadratic_coefficients * coefficients);
 int Check_flag(char flag[]);
 void Print_help();
 void Solve_equation();
 void Another_argument();
 void Terminal_interface(int argc, char *argv[]);
 
-#endif
+#endif // __USERS_INTERACTION__
