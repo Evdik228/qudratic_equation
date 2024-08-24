@@ -26,7 +26,7 @@ bool Clean_boofer(){
         int ch = getchar();
         if (isspace(ch)) {
             break;
-        } else if(ch == EOF){
+        } else if(ch == EOF){     
             return false;
         }
     }

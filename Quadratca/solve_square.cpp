@@ -32,7 +32,8 @@ int Solve_quadratic_equation(quadratic_components * components) {
     } else if (Comparison_zero(discriminant)) { 
         components->roots.x1 = -(components->coefficients.coef_two) / (2 * (components->coefficients.coef_one));
         components->roots.n_roots = ONE_ROOT;
-    } else {                                      
+    } else {
+        //  sqrt_D                                    
         components->roots.x1 = (-(components->coefficients.coef_two) - sqrt(discriminant)) 
         / (2 * (components->coefficients.coef_one));
 
@@ -44,6 +45,7 @@ int Solve_quadratic_equation(quadratic_components * components) {
     return 0;
 }
 
+// solve
 int Solves_equation(quadratic_components * components) { 
     if (Comparison_zero(components->coefficients.coef_one)) {
         return Solve_linear_equation(&components->coefficients.coef_two, &components->coefficients.coef_three,

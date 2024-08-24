@@ -1,5 +1,9 @@
-#ifndef  __S_SQUARE__
+#ifndef  __S_SQUARE__ // __-----
 #define  __S_SQUARE__
+
+
+
+
 
 
 struct quadratic_coefficients 
@@ -17,7 +21,7 @@ struct quadratic_roots
 };
 
 
-struct quadratic_components     
+struct quadratic_components // ???   
 {
     quadratic_coefficients coefficients;
     quadratic_roots roots;

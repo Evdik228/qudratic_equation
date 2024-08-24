@@ -12,22 +12,51 @@
 
 
 
-int Check_flag(char flag[]) { 
-    if (strcmp(sqe, flag) == 0){ 
-        return flag_solve_equation; 
-    } else if (strcmp(chans, flag) == 0) {
-        return flag_check_answers;
-    } else if (strcmp(file, flag) == 0) {
-        return flag_file;
-    } else {
-        return flag_help;
+void Execlusion_flags(is_number_flag * is_number){
+    if (is_number->flag_solve_equation == 1){
+        Solve_equation(); 
+    } 
+    if(is_number->flag_check_answers == 1) {       
+        Run_tests();
+    } 
+    if(is_number->flag_file == 1) {
+        File_enterface(is_number->flag_add, is_number->scan_file_name, is_number->add_file_name);
+    } 
+    if(is_number->flag_help){
+        Print_help();
     }
 }
 
+int Check_flag(char* flag, is_number_flag * is_number) { 
+    if (strcmp(sqe, flag) == 0){ 
+        is_number->flag_solve_equation = 1;
+        return 0;
+    } else if (strcmp(test, flag) == 0) {     //Да, костыль, но пока хз как по другому.
+        is_number->flag_check_answers = 1;
+        return 0;
+    } else if (strcmp(help, flag) == 0) {
+        is_number->flag_help = 1;
+        return 0;
+    } else if (strcmp(file, flag) == 0) {
+        is_number->flag_file = 1;
+        return 1;
+    } else if (strcmp(add, flag) == 0  && is_number->flag_file == 1) {
+        is_number->flag_add = 1; 
+        return 1;
+    } else {
+        printf("any flags not recognized!  add -help\n");
+        return -1;
+    }
+    return 0;
+}
+
 void Print_help() {
-    printf("\n...   -sqe     ...  solve quadratic equation\n");
-    printf("...   -chans   ...  check my unit tests\n");
-    printf("...   -file    ...  scan coefficients from file\n\n");
+    printf("\n...   -sqe                      ...  solve quadratic equation\n");
+    printf("...   -test                     ...  check my unit tests\n");
+    printf("...   -file                     ...  scan coefficients from default file\n");
+    printf("...   -file filename.txt        ...  scan coefficients from your file\n");
+    printf("...   -file --add               ...  add answer in default file\n");
+    printf("...   -file --add filename.txt  ...  add answer in your file\n\n");
 }
     
 void Solve_equation() {  
@@ -37,9 +66,6 @@ void Solve_equation() {
     Data_output(components.roots);
 }
 
-void Another_argument() {
-    printf("Incorrect flag, if you don't know flag, add -help\n");
-}
 
 void Data_output(quadratic_roots roots){
     switch (roots.n_roots)
@@ -65,34 +91,40 @@ void Data_entry(quadratic_coefficients * coefficients) {
         printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: ");
         
         if (!Clean_boofer()){
-            exit(0);
+            exit(0); //TODO: change 
         }
 
     }  
 }
 
-void Terminal_interface(int argc, char *argv[]){ 
+void Terminal_interface(int argc, char * argv[]){ 
     if (argc == 1) { 
         printf("Add flag to the console, if you don't know flag, add -help\n");
         return;
 
-    } else if (argc == 2) {
-
-        switch (Check_flag(argv[1])) 
-        {
-        case flag_help: Print_help();
-            break;
-        case flag_solve_equation: Solve_equation(); 
-            break;
-        case flag_check_answers: Run_tests();
-            break;
-        case flag_file: File_enterface();
-            break;
-        default: Another_argument();
-            break;
-        }
-
     } else {
-        printf ("Too much flags, add one\n");
-    }
+        is_number_flag is_flag = {};     
+        is_flag.add_file_name = (char *)add_file_name_default;
+        is_flag.scan_file_name = (char *)scan_file_name_default;
+        for (int number_flag = 1; number_flag < argc; number_flag++){
+            int result = Check_flag(argv[number_flag], &is_flag);   //TODO: check file name 
+            if (result == 1 && number_flag + 1 != argc) {
+
+                if (strcmp(argv[number_flag],  file) == 0 && argv[number_flag + 1][0] != '-') {
+                    is_flag.scan_file_name = argv[number_flag + 1];
+                    number_flag ++;
+
+                } else if (strcmp(argv[number_flag], add) == 0  && argv[number_flag + 1][0] != '-') {
+                    is_flag.add_file_name = argv[number_flag + 1];
+                    number_flag ++;
+                    
+                }
+            } else if (result == -1){
+                break;
+            }
+
+        }
+        Execlusion_flags(&is_flag);
+
+    }   
 }
