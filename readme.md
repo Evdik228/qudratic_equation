@@ -70,7 +70,7 @@ Our project is covered with unit tests. To run them when activating the exe file
 ```sh
 ./app -file file.txt
 ```
-- (--add): Writes data to a file, if a file name is entered after the falg, it will write to it, otherwise to the base
+- (--add): Writes data to a file, if a file name is entered after the flag, it will write to it, otherwise to the base
 ```sh
 ./app --add file.txt
 ```

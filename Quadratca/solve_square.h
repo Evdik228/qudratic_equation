@@ -22,7 +22,7 @@ enum number_for_roots
 
 struct quadratic_coefficients 
 {
-    double coef_one; /// djfdhgf
+    double coef_one; 
     double coef_two;
     double coef_three;  
 };
@@ -42,7 +42,7 @@ struct quadratic_roots
 };
 
 /**
- * @brief structure that contains information about all quatratic aquation 
+ * @brief structure that contains information about all quadratic equation 
  * @param coefficients about coefficients 
  * @param roots about roots
 */
