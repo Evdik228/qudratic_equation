@@ -9,8 +9,8 @@ This project was created to solve a quadratic equation. The main idea is to solv
 - [Progect team](#progect-team)
 
 ## Technologies
-- [C] (https://www.w3schools.com/c/c_intro.php)
-- [C++] (https://www.w3schools.com/cpp/cpp_intro.asp)
+- [C](https://www.w3schools.com/c/c_intro.php)
+- [C++](https://www.w3schools.com/cpp/cpp_intro.asp)
 - [gcc](https://gcc.gnu.org/)
 - [doxygen](https://www.doxygen.nl/)
 - [Latex](https://www.latex-project.org/)
@@ -81,7 +81,7 @@ Our project is covered with unit tests. To run them when activating the exe file
 - [Дединский Илья](https://vk.com/ded32_ru) — team leader
 - [Житников Андрей](https://t.me/azhkov) — mentor, redactor
 - [Матвей Павлов](https://vk.com/entryfrager) — mentor, redactor
-- [Евдокимов Дмитрий](tg://resolve?domain=bzvyagintsev) — Developer
+- [Евдокимов Дмитрий](https://t.me/Ev_dima) — Developer
 
 ## Sources
  
