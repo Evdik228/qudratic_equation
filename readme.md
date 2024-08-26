@@ -1,4 +1,4 @@
-# Название проекта
+# Quadratic equation
 Добавьте краткое описание проекта, опишите какую задачу он решает. 1-3 предложения будет достаточно. Добавьте бейджи для важных статусов проекта: статус разработки (в разработке, на поддержке и т.д.), статус билда, процент покрытия тестами и тд.
 
 ## Содержание
@@ -10,17 +10,33 @@
 - [To do](#to-do)
 - [Команда проекта](#команда-проекта)
 
-## Технологии
-- [GatsbyJS](https://www.gatsbyjs.com/)
-- [TypeScript](https://www.typescriptlang.org/)
-- ...
+## Technologies
+- [C/C++](https://www.w3schools.com/c/c_intro.php) (https://www.w3schools.com/cpp/cpp_intro.asp)
+- [gcc](https://gcc.gnu.org/)
+- [doxygen](https://www.doxygen.nl/)
+- [Latex](https://www.latex-project.org/)
 
-## Использование
-Расскажите как установить и использовать ваш проект, покажите пример кода:
+## Usage
+In order to use my project, it needs to be uploaded to the development environment, preferably VS code. To compile the project, you need a Linux operating system or WSL (Windows Subsystem for Linux) installed.
 
-Установите npm-пакет с помощью команды:
+Separately about Unit tests. In order to enter your Unit tests, you need to use the structure in the file unit_tests.cpp
 ```sh
-$ npm i your-awesome-plugin-name
+struct separate_test
+{   
+    quadratic_components component;
+    right_answers answers;
+        
+};
+
+separate_test Tests [] =     {{{{  1,  2,  -3}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    1,   -3}},
+                              {{{  0,  0,   0}, { 0, 0, NO_ROOT}},{ INF_ROOTS,    0,    0}},
+                              {{{  0,  2,  -4}, { 0, 0, NO_ROOT}},{  ONE_ROOT,    2,    0}},
+                              {{{  0,  0,   5}, { 0, 0, NO_ROOT}},{   NO_ROOT,    0,    0}}, 
+                              {{{  1,  0,  -4}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    2,   -2}}, 
+                              {{{  1,  2,   3}, { 0, 0, NO_ROOT}},{   NO_ROOT,    0,    0}}, 
+                              {{{  1, -6,   9}, { 0, 0, NO_ROOT}},{  ONE_ROOT,    3,    0}}, 
+                              {{{  4, -8,   0}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    0,    2}},
+                              {{{  1, -1,  -6}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    3,   -2}}}; 
 ```
 
 И добавьте в свой проект:
