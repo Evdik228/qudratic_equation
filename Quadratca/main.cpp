@@ -2,7 +2,7 @@
 
 #include "users_interaction.h"
 
-// TODO: read about assert
+// TODO: read about assert(my assert)
 // TODO: reed about make(ОПЯТЬ)
 // TODO: read about readme, and about markdown
 // TODO: rename work vs file

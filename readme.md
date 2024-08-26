@@ -1,12 +1,11 @@
 # Quadratic equation
-Добавьте краткое описание проекта, опишите какую задачу он решает. 1-3 предложения будет достаточно. Добавьте бейджи для важных статусов проекта: статус разработки (в разработке, на поддержке и т.д.), статус билда, процент покрытия тестами и тд.
+This project was created to solve a quadratic equation. The main idea is to solve equations completely with data input and output in a user-friendly way.
 
 ## Содержание
 - [Technologies](#technologies)
 - [Strart working](#start-worcing)
-- [teating](#testing)
-- [Contributing](#contributing)
-- [To do](#to-do)
+- [testing](#testing)
+- [flags](#flags)
 - [Progect team](#progect-team)
 
 ## Technologies
@@ -54,22 +53,35 @@ Our project is covered with unit tests. To run them when activating the exe file
 ```sh
 ./app -test
 ```
-
-## Contributing
-Как помочь в разработке проекта? Как отправить предложение или баг-репорт. Как отправить доработку (оформить pull request, какие стайлгайды используются). Можно вынести в отдельный файл — [Contributing.md](./CONTRIBUTING.md).
-
-### Why did we develop this project?
-Чтобы был.
-
-## To do
-- [x] Добавить крутое README
-- [ ] Всё переписать
-- [ ] ...
+## Flags
+   A brief description of the flags, you can read using the -help flag. The program supports reading several flags at the same time; if by mistake one flag was entered several times, it will be executed once. Falgs are executed in a fixed order.
+- (-help): Information about flags for the user
+```sh
+./app -help
+```
+- (-sqe): Solves a quadratic equation using the entered coefficients and displays the answer to the console
+```sh
+./app -sqe
+```
+- (-test): Outputs the result of the testing unit, the data is taken from the structure described above
+```sh
+./app -test
+```
+- (-file): Reads data from a file if a file name is entered after the tag, reads data from there, if the file name is incorrect, reads from the base file
+```sh
+./app -file file.txt
+```
+- (--add): Writes data to a file, if a file name is entered after the falg, it will write to it, otherwise to the base
+```sh
+./app --add file.txt
+```
 
 ## Project team
 
-
-- [Богдан Звягинцев](tg://resolve?domain=bzvyagintsev) — Front-End Engineer
+- [Дединский Илья](https://vk.com/ded32_ru) — team leader
+- [Житников Андрей](https://t.me/azhkov) — mentor, redactor
+- [Матвей Павлов](https://vk.com/entryfrager) — mentor, redactor
+- [Евдокимов Дмитрий](tg://resolve?domain=bzvyagintsev) — Developer
 
 ## Sources
  

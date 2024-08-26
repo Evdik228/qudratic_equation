@@ -45,7 +45,7 @@ int Check_flag(char* flag, is_number_flag * is_number) {
         return 1;
     } else {
         printf("any flags not recognized!  add -help\n");
-        return -1;
+        return -1;          //
     }
     return 0;
 }
