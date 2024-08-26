@@ -48,33 +48,49 @@ To install and run the project, you need [Linux](https://www.linux.org/) for mak
 
 ## Testing
 
-Our project is covered with unit tests. To run them when activating the exe file, use the -test tag
+Our project is covered with unit tests. To run them when activating the exe file, use the `-test` tag
 ```sh
 ./app -test
 ```
 ## Flags
    A brief description of the flags, you can read using the -help flag. The program supports reading several flags at the same time; if by mistake one flag was entered several times, it will be executed once. Falgs are executed in a fixed order.
-- (-help): Information about flags for the user
+-  `-help` : Information about flags for the user
 ```sh
 ./app -help
 ```
-- (-sqe): Solves a quadratic equation using the entered coefficients and displays the answer to the console
+- `-sqe` : Solves a quadratic equation using the entered coefficients and displays the answer to the console
 ```sh
 ./app -sqe
 ```
-- (-test): Outputs the result of the testing unit, the data is taken from the structure described above
+- `-test` : Outputs the result of the testing unit, the data is taken from the structure described above
 ```sh
 ./app -test
 ```
-- (-file): Reads data from a file if a file name is entered after the tag, reads data from there, if the file name is incorrect, reads from the base file
+- `-file` : Reads data from a file if a file name is entered after the tag, reads data from there, if the file name is incorrect, reads from the base file
 ```sh
 ./app -file file.txt
 ```
-- (--add): Writes data to a file, if a file name is entered after the flag, it will write to it, otherwise to the base
+- `--add` : Writes data to a file, if a file name is entered after the flag, it will write to it, otherwise to the base
 ```sh
 ./app --add file.txt
 ```
+
+- `--solving` : 
+Generates a solution to an equation into the file `solve.md`
+```sh
+./app --solving 
+```
+
+Coefficients are entered into the command line.
+![Demonstration console work](Quadratca/imgs/solving1.png)
+-
+Next, the solution is output to the above file.
+![Demonstration console work](Quadratca/imgs/solving2.png)
+- 
+This program supports entering multiple tags at the same time.
 ![Demonstration console work](Quadratca/imgs/console.png)
+-
+
 
 ## Project team
 

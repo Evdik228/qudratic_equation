@@ -9,12 +9,12 @@
 #include <stdlib.h>
 #include <assert.h>
 
-#include "solve_square.h"
-#include "users_interaction.h"
-#include "unit_tests.h"
-#include "work_vs_file.h"
-#include "utilits.h"
-
+#include "../include/solve_square.h"
+#include "../include/users_interaction.h"
+#include "../include/unit_tests.h"
+#include "../include/work_vs_file.h"
+#include "../include/utilits.h"
+#include "../include/solution_generation.h"
 
 /**
  * @brief Checks which flags have been entered into the system
@@ -32,6 +32,9 @@ void Execlusion_flags(is_number_flag * is_number) {
     } 
     if(is_number->flag_help) {
         Print_help();
+    }
+    if(is_number->flag_solving_generation) {
+        Solution_generation();
     }
 }
 
@@ -56,6 +59,9 @@ int Check_flag(char* flag, is_number_flag *is_number) {
     } else if (strcmp(add, flag) == 0  && is_number->flag_file == 1) {
         is_number->flag_add = 1; 
         return 1;
+    } else if (strcmp(solving, flag) == 0) {
+        is_number->flag_solving_generation = 1; 
+        return 1;
     } else {
         fprintf(stderr, "any flags not recognized!  add --help\n");
         return -1;          
@@ -73,7 +79,8 @@ void Print_help() {
     printf("...   --file                     ...  scan coefficients from default file\n");
     printf("...   --file filename.txt        ...  scan coefficients from your file\n");
     printf("...   --file --add               ...  add answer in default file\n");
-    printf("...   --file --add filename.txt  ...  add answer in your file\n\n");
+    printf("...   --file --add filename.txt  ...  add answer in your file\n");
+    printf("...   --solving                  ...  Writes a detailed quadratic solution to a file\n\n");
 }
     
 /**
@@ -113,7 +120,7 @@ void Data_output(quadratic_roots roots){
 
 void Data_entry(quadratic_coefficients * coefficients) {
 
-    printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: "); 
+    printf("\nEnter the coefficients of a quadratic equation of the form ax^2 + b^x +c: "); 
     while (scanf ("%lg %lg %lg", &(coefficients->coef_one), &(coefficients->coef_two), &(coefficients->coef_three)) != 3) {
         printf("You have an input error, please enter the correct values!\n");
         printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: ");

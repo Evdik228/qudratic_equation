@@ -1,13 +1,14 @@
 #ifndef  USERS_INTERACTION
 #define  USERS_INTERACTION
 
-#include "solve_square.h"
+#include "../include/solve_square.h"
 
-inline const char* sqe  =  "--sqe";
-inline const char* test =  "--test";      
-inline const char* file =  "--file"; 
-inline const char* add  =  "--add"; 
-inline const char* help =  "--help";
+inline const char* sqe     =  "--sqe";
+inline const char* test    =  "--test";      
+inline const char* file    =  "--file"; 
+inline const char* add     =  "--add"; 
+inline const char* help    =  "--help";
+inline const char* solving = "--solving"; 
 
 
 enum number_flag
@@ -37,6 +38,7 @@ struct is_number_flag
     int  flag_check_answers;
     int  flag_file;
     int  flag_add;
+    int  flag_solving_generation;
     char* scan_file_name;
     char* add_file_name;
 };

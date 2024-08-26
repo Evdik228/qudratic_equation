@@ -1,8 +1,7 @@
 #include <stdio.h>
 
-#include "users_interaction.h"
+#include "../include/users_interaction.h"
 
-// TODO: read about assert(my assert)
 // TODO: reed about make
 // TODO: divide into folders   
 

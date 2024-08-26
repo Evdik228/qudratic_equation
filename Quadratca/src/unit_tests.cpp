@@ -4,12 +4,13 @@
 */
 #include <stdio.h>
 #include <math.h>
-
-#include "solve_square.h"
-#include "users_interaction.h"
-#include "unit_tests.h"
-#include "utilits.h"
 #include <assert.h>
+
+#include "../include/solve_square.h"
+#include "../include/users_interaction.h"
+#include "../include/unit_tests.h"
+#include "../include/utilits.h"
+
 
 #define RESET  "\033[0m"     
 #define RED    "\033[1;31m"   

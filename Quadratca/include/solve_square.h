@@ -47,7 +47,7 @@ struct quadratic_roots
  * @param roots about roots
 */
 
-struct quadratic_components // ???   
+struct quadratic_components   
 {
     quadratic_coefficients coefficients;
     quadratic_roots roots;

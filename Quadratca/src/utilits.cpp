@@ -8,7 +8,7 @@
 #include <stdio.h>
 #include <ctype.h>
 
-#include "utilits.h"
+#include "../include/utilits.h"
 
 const double EPSILON = 0.000001;
 

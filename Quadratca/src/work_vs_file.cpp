@@ -8,9 +8,9 @@
 #include <ctype.h>
 
 
-#include "work_vs_file.h"
-#include "solve_square.h"
-#include "users_interaction.h"
+#include "../include/work_vs_file.h"
+#include "../include/solve_square.h"
+#include "../include/users_interaction.h"
 
 /**
  * @brief Outputs data to a file
