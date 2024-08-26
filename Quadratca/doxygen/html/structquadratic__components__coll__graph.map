@@ -1,0 +1,5 @@
+<map id="quadratic_components" name="quadratic_components">
+<area shape="rect" id="node1" title="structure that contains information about all quatratic aquation" alt="" coords="87,95,257,121"/>
+<area shape="rect" id="node2" href="$structquadratic__coefficients.html" title="Structure for declaring the coefficients of a quadratic equation." alt="" coords="5,5,171,32"/>
+<area shape="rect" id="node3" href="$structquadratic__roots.html" title="structure that contains information about the results of a decision" alt="" coords="195,5,317,32"/>
+</map>

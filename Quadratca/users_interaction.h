@@ -43,36 +43,17 @@ struct is_number_flag
     char* add_file_name;
 };
 
-/**
- * @brief Function to output the response to the console
-*/
+
 void Data_output(quadratic_roots roots);
 
-/**
- * @brief Function to read data from the console
-*/
 void Data_entry(quadratic_coefficients * coefficients);
 
-/**
- * @brief The function checks which flag the flag entered into the console belongs 
- * to if the flag is incorrect, it displays error information
-*/
 int Check_flag(char* flag, is_number_flag * is_number);
 
-/**
- * @brief Displays data about flags 
-*/
 void Print_help();
 
-/**
- * @brief 
-Solve a quadratic equation if the -sqe flag is entered
-*/
 void Solve_equation();
 
-/**
- * @brief Reads and processes data about entered flags
-*/
 void Terminal_interface(int argc, char *argv[]);
 
 #endif // __USERS_INTERACTION__

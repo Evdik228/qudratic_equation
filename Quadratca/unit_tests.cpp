@@ -13,6 +13,13 @@
 
 
 
+/**
+ * @brief Contains the correct roots and the correct number of roots (hammered into the system)
+ * @param x1_right right first root
+ * @param x2_right right second root
+ * @param n_roots_right right number of roots
+*/
+
 struct right_answers
 {
     int                  n_roots_right;
@@ -37,8 +44,16 @@ separate_test Tests [] =     {{{{  1,  2,  -3}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,  
                               {{{  4, -8,   0}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    0,    2}},
                               {{{  1, -1,  -6}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    3,   -2}}}; 
 // const int number_of_tests = 9;
+
 const int number_of_tests = sizeof(Tests) / sizeof(Tests[0]);
+
 /*Check responses*/
+
+
+/**
+ * @brief The function compares the answer entered into the system with the one issued by the program,
+ *  and if there is a discrepancy, it reports an error
+*/
 
 bool Is_right_answer(separate_test test) { 
     if (test.component.roots.n_roots == test.answers.n_roots_right){
@@ -52,6 +67,10 @@ bool Is_right_answer(separate_test test) {
     return false;
 }
 
+/**
+ * @brief The function prints an error message to the console
+*/
+
 void Mistake_print(int number, separate_test Tests []) { 
     printf("%s-------------------------------------------------------------------\n%s", RED, RESET);
     printf("%sTest number %d is INCORECT!!!, please check more detailed!\n%s",RED , number + 1, RESET);
@@ -61,9 +80,18 @@ void Mistake_print(int number, separate_test Tests []) {
            Tests[number].answers.x1_right, Tests[number].answers.x2_right, Tests[number].answers.n_roots_right);
 }
 
+
+/**
+ * @brief function that runs the verification of pre-prepared tests and provides information about the verification.
+ * 
+ * @details The implementation of this function contains a function for comparing prepared answers,
+ *  and the answers issued by the Solve_equation function, as well as a function for outputting test results to the console
+*/
+
+
 int Run_tests() {
     int number_right_answer = 0;
-    bool is_error  = true;
+    bool is_error = true;
 
     for(int number = 0; number < number_of_tests; number++) { 
         Solves_equation(&(Tests[number].component));

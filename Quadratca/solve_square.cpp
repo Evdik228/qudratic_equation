@@ -11,6 +11,11 @@
 
 //TODO: isfinite and nan
 
+
+/**
+ * @brief Function for solving a linear equation.
+*/
+
 int Solve_linear_equation (double * coef_two, double * coef_three, double * x1, int * n_roots) { 
     assert(coef_two != NULL);
 
@@ -22,6 +27,15 @@ int Solve_linear_equation (double * coef_two, double * coef_three, double * x1, 
     }
     return 0;
 }
+
+
+/**
+ * @brief Function for solving a quadratic equation
+ * 
+ * @details The function is triggered if the slope is greater than zero.
+ *  Calculates the discriminant, compares it with zero and calculates the answer
+*/
+
 
 int Solve_quadratic_equation(quadratic_components * components) {
     double discriminant = (components->coefficients.coef_two) * (components->coefficients.coef_two)
@@ -45,7 +59,12 @@ int Solve_quadratic_equation(quadratic_components * components) {
     return 0;
 }
 
-// solve
+/**
+ * @brief function for solving a quadratic equation with given parameters
+ * 
+ * @details The implementation of this function contains a function for solving linear and quadratic equations
+*/
+
 int Solves_equation(quadratic_components * components) { 
     if (Comparison_zero(components->coefficients.coef_one)) {
         return Solve_linear_equation(&components->coefficients.coef_two, &components->coefficients.coef_three,

@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Checks which flags have been entered into the system
+*/
+
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
@@ -11,26 +16,34 @@
 #include "utilits.h"
 
 
+/**
+ * @brief Checks which flags have been entered into the system
+*/
 
-void Execlusion_flags(is_number_flag * is_number){
-    if (is_number->flag_solve_equation == 1){
+void Execlusion_flags(is_number_flag * is_number) {
+    if (is_number->flag_solve_equation == 1) {
         Solve_equation(); 
     } 
-    if(is_number->flag_check_answers == 1) {       
+    if(is_number->flag_check_answers == 1) {        
         Run_tests();
     } 
     if(is_number->flag_file == 1) {
         File_enterface(is_number->flag_add, is_number->scan_file_name, is_number->add_file_name);
     } 
-    if(is_number->flag_help){
+    if(is_number->flag_help) {
         Print_help();
     }
 }
 
-int Check_flag(char* flag, is_number_flag * is_number) { 
-    if (strcmp(sqe, flag) == 0){ 
+/**
+ * @brief The function checks which flag the flag entered into the console belongs 
+ * to if the flag is incorrect, it displays error information
+*/
+
+int Check_flag(char* flag, is_number_flag *is_number) {
+    if (strcmp(sqe, flag) == 0) { 
         is_number->flag_solve_equation = 1;
-        return 0;           // 0 then ti pidoras
+        return 0;          
     } else if (strcmp(test, flag) == 0) {     //Да, костыль, но пока хз как по другому.
         is_number->flag_check_answers = 1;
         return 0;
@@ -39,16 +52,20 @@ int Check_flag(char* flag, is_number_flag * is_number) {
         return 0;
     } else if (strcmp(file, flag) == 0) {
         is_number->flag_file = 1;
-        return 1;               // 1 then ti gay
+        return 1;              
     } else if (strcmp(add, flag) == 0  && is_number->flag_file == 1) {
         is_number->flag_add = 1; 
         return 1;
     } else {
-        printf("any flags not recognized!  add -help\n");
+        fprintf(stderr, "any flags not recognized!  add -help\n");
         return -1;          //
     }
     return 0;
 }
+
+/**
+ * @brief Displays data about flags 
+*/
 
 void Print_help() {
     printf("\n...   -sqe                      ...  solve quadratic equation\n");
@@ -59,6 +76,10 @@ void Print_help() {
     printf("...   -file --add filename.txt  ...  add answer in your file\n\n");
 }
     
+/**
+ * @brief Solve a quadratic equation if the -sqe flag is entered
+*/
+
 void Solve_equation() {  
     quadratic_components components = {};
     Data_entry(&components.coefficients);      
@@ -66,6 +87,9 @@ void Solve_equation() {
     Data_output(components.roots);
 }
 
+/**
+ * @brief Function to output the response to the console
+*/
 
 void Data_output(quadratic_roots roots){
     switch (roots.n_roots)
@@ -83,6 +107,10 @@ void Data_output(quadratic_roots roots){
     }
 }
 
+/**
+ * @brief Function to read data from the console
+*/
+
 void Data_entry(quadratic_coefficients * coefficients) {
 
     printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: "); 
@@ -96,6 +124,10 @@ void Data_entry(quadratic_coefficients * coefficients) {
 
     }  
 }
+
+/**
+ * @brief Reads and processes data about entered flags
+*/
 
 void Terminal_interface(int argc, char * argv[]){ 
     if (argc == 1) { 

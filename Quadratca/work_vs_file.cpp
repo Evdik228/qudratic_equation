@@ -7,6 +7,12 @@
 #include "solve_square.h"
 #include "users_interaction.h"
 
+/**
+ * @brief Outputs data to a file
+ * 
+ * @details The function outputs data to a file, by file name; if there is no file with the same name, 
+ * it creates a new file in the directory and outputs data to it
+*/
 
 void Put_data_file(int n_roots, double x1, double x2, char* add_file_name){
     printf("result on file!\n");

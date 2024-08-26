@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['quadratic_5fcoefficients_1',['quadratic_coefficients',['../structquadratic__coefficients.html',1,'']]],
-  ['quadratic_5fcomponents_2',['quadratic_components',['../structquadratic__components.html',1,'']]],
-  ['quadratic_5froots_3',['quadratic_roots',['../structquadratic__roots.html',1,'']]]
+  ['data_5fentry_2',['Data_entry',['../users__interaction_8cpp.html#a336053ff15af38fde35c623b3a6c516c',1,'users_interaction.cpp']]],
+  ['data_5foutput_3',['Data_output',['../users__interaction_8cpp.html#ac1f07839b18a7be4da7437f10177baea',1,'users_interaction.cpp']]]
 ];

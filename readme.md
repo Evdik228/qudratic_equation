@@ -1,18 +1,18 @@
 # Quadratic equation
 This project was created to solve a quadratic equation. The main idea is to solve equations completely with data input and output in a user-friendly way.
 
-## Содержание
+## 
 - [Technologies](#technologies)
 - [Strart working](#start-worcing)
-- [testing](#testing)
-- [flags](#flags)
+- [Testing](#testing)
+- [Flags](#flags)
 - [Progect team](#progect-team)
 
 ## Technologies
 - [C](https://www.w3schools.com/c/c_intro.php)
 - [C++](https://www.w3schools.com/cpp/cpp_intro.asp)
-- [gcc](https://gcc.gnu.org/)
-- [doxygen](https://www.doxygen.nl/)
+- [GCC](https://gcc.gnu.org/)
+- [Doxygen](https://www.doxygen.nl/)
 - [Latex](https://www.latex-project.org/)
 
 ## Usage
@@ -23,7 +23,7 @@ $ make
 ```
 
 Separately about Unit tests. In order to enter your Unit tests, you need to use the structure in the file unit_tests.cpp
-```sh
+```cpp
 struct separate_test
 {   
     quadratic_components component;
@@ -45,7 +45,7 @@ separate_test Tests [] =     {{{{  1,  2,  -3}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,  
 Add files to the Quadratica directory into which you want to write data or from which you want to read it. Enter the data into the file correctly, otherwise the program will not execute.
 
 ### Requirements
-To install and run the project, you need [Linux](https://www.linux.org/) or [WSL](https://learn.microsoft.com/ru-ru/windows/wsl/install).
+To install and run the project, you need [Linux](https://www.linux.org/) for make.
 
 ## Testing
 
@@ -78,10 +78,11 @@ Our project is covered with unit tests. To run them when activating the exe file
 
 ## Project team
 
-- [Дединский Илья](https://vk.com/ded32_ru) — team leader
-- [Житников Андрей](https://t.me/azhkov) — mentor, redactor
-- [Матвей Павлов](https://vk.com/entryfrager) — mentor, redactor
-- [Евдокимов Дмитрий](https://t.me/Ev_dima) — Developer
 
-## Sources
+- [Evdokimov Dmitriy](https://t.me/Ev_dima) — chief developer
+- [Dedinskiy Ilia](https://vk.com/ded32_ru) — team leader
+- [Jitnikov Andrei](https://t.me/azhkov) — mentor, editor
+- [Matvei Pavlov](https://vk.com/entryfrager) — mentor, editor
+
+
  

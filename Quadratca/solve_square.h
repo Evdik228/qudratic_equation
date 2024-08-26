@@ -22,7 +22,7 @@ enum number_for_roots
 
 struct quadratic_coefficients 
 {
-    double coef_one;
+    double coef_one; /// djfdhgf
     double coef_two;
     double coef_three;  
 };
@@ -54,11 +54,6 @@ struct quadratic_components // ???
     
 };
 
-/**
- * @brief function for solving a quadratic equation with given parameters
- * 
- * @details The implementation of this function contains a function for solving linear and quadratic equations
-*/
 
 int Solves_equation(quadratic_components  *components);
 
