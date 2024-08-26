@@ -30,7 +30,7 @@ void Execlusion_flags(is_number_flag * is_number){
 int Check_flag(char* flag, is_number_flag * is_number) { 
     if (strcmp(sqe, flag) == 0){ 
         is_number->flag_solve_equation = 1;
-        return 0;
+        return 0;           // 0 then ti pidoras
     } else if (strcmp(test, flag) == 0) {     //Да, костыль, но пока хз как по другому.
         is_number->flag_check_answers = 1;
         return 0;
@@ -39,7 +39,7 @@ int Check_flag(char* flag, is_number_flag * is_number) {
         return 0;
     } else if (strcmp(file, flag) == 0) {
         is_number->flag_file = 1;
-        return 1;
+        return 1;               // 1 then ti gay
     } else if (strcmp(add, flag) == 0  && is_number->flag_file == 1) {
         is_number->flag_add = 1; 
         return 1;
