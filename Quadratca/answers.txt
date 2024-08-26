@@ -1,2 +1,1 @@
-First root:-6.37, Second root:4.71
-    
+First root:-4.16, Second root:2.16

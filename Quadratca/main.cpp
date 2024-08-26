@@ -3,9 +3,8 @@
 #include "users_interaction.h"
 
 // TODO: read about assert(my assert)
-// TODO: reed about make(ОПЯТЬ)
-// TODO: change hedergards
-
+// TODO: reed about make
+// TODO: divide into folders   
 
 /**
  * @file

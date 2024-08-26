@@ -1,5 +1,5 @@
-#ifndef  __UNIT_TESTS__
-#define  __UNIT_TESTS__
+#ifndef  UNIT_TESTS
+#define  UNIT_TESTS
 
 
 /**

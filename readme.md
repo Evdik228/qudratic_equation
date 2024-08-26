@@ -74,6 +74,7 @@ Our project is covered with unit tests. To run them when activating the exe file
 ```sh
 ./app --add file.txt
 ```
+![Demonstration console work](Quadratca/imgs/console.png)
 
 ## Project team
 
@@ -83,5 +84,3 @@ Our project is covered with unit tests. To run them when activating the exe file
 - [Jitnikov Andrei](https://t.me/azhkov) — mentor, editor
 - [Matvei Pavlov](https://vk.com/entryfrager) — mentor, editor
 
-
- 

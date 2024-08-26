@@ -1,5 +1,5 @@
-#ifndef  __S_SQUARE__   
-#define  __S_SQUARE__
+#ifndef  S_SQUARE   
+#define  S_SQUARE
 
 
 /**

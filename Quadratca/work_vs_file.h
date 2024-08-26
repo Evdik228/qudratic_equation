@@ -1,5 +1,5 @@
-#ifndef  __WORK_FILE__
-#define  __WORK_FILE__
+#ifndef  WORK_FILE
+#define  WORK_FILE
 
 inline const char* add_file_name_default = "answers.txt";
 inline const char* scan_file_name_default = "file.txt";

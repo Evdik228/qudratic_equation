@@ -44,7 +44,7 @@ int Check_flag(char* flag, is_number_flag *is_number) {
     if (strcmp(sqe, flag) == 0) { 
         is_number->flag_solve_equation = 1;
         return 0;          
-    } else if (strcmp(test, flag) == 0) {     //Да, костыль, но пока хз как по другому.
+    } else if (strcmp(test, flag) == 0) {     
         is_number->flag_check_answers = 1;
         return 0;
     } else if (strcmp(help, flag) == 0) {
@@ -57,8 +57,8 @@ int Check_flag(char* flag, is_number_flag *is_number) {
         is_number->flag_add = 1; 
         return 1;
     } else {
-        fprintf(stderr, "any flags not recognized!  add -help\n");
-        return -1;          //
+        fprintf(stderr, "any flags not recognized!  add --help\n");
+        return -1;          
     }
     return 0;
 }
@@ -68,12 +68,12 @@ int Check_flag(char* flag, is_number_flag *is_number) {
 */
 
 void Print_help() {
-    printf("\n...   -sqe                      ...  solve quadratic equation\n");
-    printf("...   -test                     ...  check my unit tests\n");
-    printf("...   -file                     ...  scan coefficients from default file\n");
-    printf("...   -file filename.txt        ...  scan coefficients from your file\n");
-    printf("...   -file --add               ...  add answer in default file\n");
-    printf("...   -file --add filename.txt  ...  add answer in your file\n\n");
+    printf("\n...   --sqe                      ...  solve quadratic equation\n");
+    printf("...   --test                     ...  check my unit tests\n");
+    printf("...   --file                     ...  scan coefficients from default file\n");
+    printf("...   --file filename.txt        ...  scan coefficients from your file\n");
+    printf("...   --file --add               ...  add answer in default file\n");
+    printf("...   --file --add filename.txt  ...  add answer in your file\n\n");
 }
     
 /**

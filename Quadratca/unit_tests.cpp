@@ -12,11 +12,12 @@
 #include <assert.h>
 
 #define RESET  "\033[0m"     
-#define RED    "\033[1;31m"   //TODO **Make lib or struct for colors 
+#define RED    "\033[1;31m"   
 #define GREEN  "\033[1;32m" 
 
-
-
+#define PRINT_RED(text)  printf(RED text RESET);
+#define PRINT_GREEN(text) printf(GREEN text RESET)
+ 
 /**
  * @brief Contains the correct roots and the correct number of roots (hammered into the system)
  * @param x1_right right first root
@@ -39,7 +40,7 @@ struct separate_test
 };
 
 separate_test Tests [] =     {{{{  1,  2,  -3}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    1,   -3}},
-                              {{{  0,  0,   0}, { 0, 0, NO_ROOT}},{ INF_ROOTS,    0,    0}},
+                              {{{  0,  0,   0}, { 0, 0, NO_ROOT}},{ INF_ROOTS,    0,    1}},
                               {{{  0,  2,  -4}, { 0, 0, NO_ROOT}},{  ONE_ROOT,    2,    0}},
                               {{{  0,  0,   5}, { 0, 0, NO_ROOT}},{   NO_ROOT,    0,    0}}, 
                               {{{  1,  0,  -4}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    2,   -2}}, 
@@ -76,7 +77,7 @@ bool Is_right_answer(separate_test test) {
 */
 
 void Mistake_print(int number, separate_test Tests []) { 
-    printf("%s-------------------------------------------------------------------\n%s", RED, RESET);
+    PRINT_RED("-------------------------------------------------------------------\n");
     printf("%sTest number %d is INCORECT!!!, please check more detailed!\n%s",RED , number + 1, RESET);
     printf("Your answer: first root = %.2f, second root = %.2f , number of roots = %i\n",
            Tests[number].component.roots.x1, Tests[number].component.roots.x2, Tests[number].component.roots.n_roots);
@@ -110,12 +111,12 @@ int Run_tests() {
     }
 
     if (is_error) {
-        printf("%s-------------------------------------------------------------------\n%s", GREEN, RESET);
-        printf("%sCheck completed, all correct!\n%s", GREEN, RESET);
-        printf("%s-------------------------------------------------------------------\n%s", GREEN, RESET);
+        PRINT_GREEN("-------------------------------------------------------------------\n");
+        PRINT_GREEN("Check completed, all correct!\n");
+        PRINT_GREEN("-------------------------------------------------------------------\n");
     } else {
         printf("%i/%i right!\n", number_right_answer, number_of_tests);
-        printf("%s-------------------------------------------------------------------\n%s", RED, RESET);
+        PRINT_RED("-------------------------------------------------------------------\n");
     }
     
     return 1;

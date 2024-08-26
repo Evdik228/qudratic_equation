@@ -1,15 +1,13 @@
-#ifndef  __USERS_INTERACTION__
-#define  __USERS_INTERACTION__
-
-// TODO: codestyle for global var
+#ifndef  USERS_INTERACTION
+#define  USERS_INTERACTION
 
 #include "solve_square.h"
 
-inline const char* sqe  =  "-sqe";
-inline const char* test =  "-test";      
-inline const char* file =  "-file"; 
+inline const char* sqe  =  "--sqe";
+inline const char* test =  "--test";      
+inline const char* file =  "--file"; 
 inline const char* add  =  "--add"; 
-inline const char* help =  "-help";
+inline const char* help =  "--help";
 
 
 enum number_flag
@@ -56,4 +54,4 @@ void Solve_equation();
 
 void Terminal_interface(int argc, char *argv[]);
 
-#endif // __USERS_INTERACTION__
+#endif // USERS_INTERACTION

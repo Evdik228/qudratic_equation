@@ -1,5 +1,5 @@
-#ifndef  __UTILITS__
-#define  __UTILITS__
+#ifndef  UTILITS
+#define  UTILITS
 
 /**
  * @brief Compares a double number with zero to avoid error due to inaccuracy
