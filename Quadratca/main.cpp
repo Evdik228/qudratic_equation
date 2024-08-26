@@ -10,6 +10,7 @@
 
 
 /**
+ * @file
  * @brief Entry point
  *
  * Execution of the program

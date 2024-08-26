@@ -1,3 +1,7 @@
+/**
+ * @file
+ * @brief Unit test file
+*/
 #include <stdio.h>
 #include <math.h>
 

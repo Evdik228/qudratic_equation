@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['solve_5fequation_27',['Solve_equation',['../users__interaction_8cpp.html#a8db389a215f12460c3e483fa87c9da10',1,'users_interaction.cpp']]]
+  ['is_5fright_5fanswer_51',['Is_right_answer',['../unit__tests_8cpp.html#a682d98338fd06fa9157926bbbc3dd3de',1,'unit_tests.cpp']]]
 ];

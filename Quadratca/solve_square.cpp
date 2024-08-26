@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief Solving a quadratic equation
+*/
+
 #include <math.h>
 #include <stdio.h>
 #include <stdbool.h>

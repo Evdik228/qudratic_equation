@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['terminal_5finterface_13',['Terminal_interface',['../users__interaction_8cpp.html#ab88192feb3a05475b519943f1a2b54f6',1,'users_interaction.cpp']]]
+  ['right_5fanswers_18',['right_answers',['../structright__answers.html',1,'']]],
+  ['run_5ftests_19',['Run_tests',['../unit__tests_8cpp.html#a4bafe0980e09a473dcc63c211f6a81a3',1,'unit_tests.cpp']]]
 ];

@@ -1,0 +1,57 @@
+\hypertarget{work__vs__file_8cpp}{}\doxysection{work\+\_\+vs\+\_\+file.\+cpp File Reference}
+\label{work__vs__file_8cpp}\index{work\_vs\_file.cpp@{work\_vs\_file.cpp}}
+
+
+The file contains everything about working with the file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}work\+\_\+vs\+\_\+file.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}solve\+\_\+square.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}users\+\_\+interaction.\+h\char`\"{}}\newline
+Include dependency graph for work\+\_\+vs\+\_\+file.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{work__vs__file_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{work__vs__file_8cpp_a9b8b645a54695f02af75f7b85766c3aa}{Put\+\_\+data\+\_\+file}} (int n\+\_\+roots, double x1, double x2, char $\ast$add\+\_\+file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em Outputs data to a file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{work__vs__file_8cpp_a3ca500c3276f897ca6efc50078fe1dcb}{File\+\_\+enterface}} (int flag\+\_\+add, char $\ast$scan\+\_\+file\+\_\+name, char $\ast$add\+\_\+file\+\_\+name)
+\begin{DoxyCompactList}\small\item\em The function will work with the file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The file contains everything about working with the file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{work__vs__file_8cpp_a3ca500c3276f897ca6efc50078fe1dcb}\label{work__vs__file_8cpp_a3ca500c3276f897ca6efc50078fe1dcb}} 
+\index{work\_vs\_file.cpp@{work\_vs\_file.cpp}!File\_enterface@{File\_enterface}}
+\index{File\_enterface@{File\_enterface}!work\_vs\_file.cpp@{work\_vs\_file.cpp}}
+\doxysubsubsection{\texorpdfstring{File\_enterface()}{File\_enterface()}}
+{\footnotesize\ttfamily void File\+\_\+enterface (\begin{DoxyParamCaption}\item[{int}]{flag\+\_\+add,  }\item[{char $\ast$}]{scan\+\_\+file\+\_\+name,  }\item[{char $\ast$}]{add\+\_\+file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+The function will work with the file. 
+
+The function writes data to a file or reads data from a file when using a special tag. The function implementation contains functions for reading data from a file and writing data to a file. \mbox{\Hypertarget{work__vs__file_8cpp_a9b8b645a54695f02af75f7b85766c3aa}\label{work__vs__file_8cpp_a9b8b645a54695f02af75f7b85766c3aa}} 
+\index{work\_vs\_file.cpp@{work\_vs\_file.cpp}!Put\_data\_file@{Put\_data\_file}}
+\index{Put\_data\_file@{Put\_data\_file}!work\_vs\_file.cpp@{work\_vs\_file.cpp}}
+\doxysubsubsection{\texorpdfstring{Put\_data\_file()}{Put\_data\_file()}}
+{\footnotesize\ttfamily void Put\+\_\+data\+\_\+file (\begin{DoxyParamCaption}\item[{int}]{n\+\_\+roots,  }\item[{double}]{x1,  }\item[{double}]{x2,  }\item[{char $\ast$}]{add\+\_\+file\+\_\+name }\end{DoxyParamCaption})}
+
+
+
+Outputs data to a file. 
+
+The function outputs data to a file, by file name; if there is no file with the same name, it creates a new file in the directory and outputs data to it 

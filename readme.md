@@ -18,7 +18,6 @@ This project was created to solve a quadratic equation. The main idea is to solv
 ## Usage
 In order to use my project, it needs to be uploaded to the development environment, preferably VS code. To compile the project, you need a Linux operating system or WSL (Windows Subsystem for Linux) installed. Enter into the console....
 ```sh
-$ make clean   
 $ make
 ```
 

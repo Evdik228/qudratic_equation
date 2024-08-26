@@ -1,3 +1,8 @@
+/**
+ * @file
+ * @brief The file contains everything about working with the file
+*/
+
 #include <stdio.h>
 #include <assert.h>
 #include <ctype.h>

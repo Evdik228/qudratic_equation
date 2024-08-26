@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['print_5fhelp_6',['Print_help',['../users__interaction_8cpp.html#aedde4c1374a4fd389021187690f185d6',1,'users_interaction.cpp']]]
+  ['is_5fnumber_5fflag_9',['is_number_flag',['../structis__number__flag.html',1,'']]],
+  ['is_5fright_5fanswer_10',['Is_right_answer',['../unit__tests_8cpp.html#a682d98338fd06fa9157926bbbc3dd3de',1,'unit_tests.cpp']]]
 ];

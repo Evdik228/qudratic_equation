@@ -1,0 +1,100 @@
+\hypertarget{unit__tests_8cpp}{}\doxysection{unit\+\_\+tests.\+cpp File Reference}
+\label{unit__tests_8cpp}\index{unit\_tests.cpp@{unit\_tests.cpp}}
+
+
+Unit test file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}solve\+\_\+square.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}users\+\_\+interaction.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}unit\+\_\+tests.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}utilits.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Include dependency graph for unit\+\_\+tests.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{unit__tests_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structright__answers}{right\+\_\+answers}}
+\begin{DoxyCompactList}\small\item\em Contains the correct roots and the correct number of roots (hammered into the system) \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structseparate__test}{separate\+\_\+test}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unit__tests_8cpp_ab702106cf3b3e96750b6845ded4e0299}\label{unit__tests_8cpp_ab702106cf3b3e96750b6845ded4e0299}} 
+\#define {\bfseries RESET}~\char`\"{}\textbackslash{}033\mbox{[}0m\char`\"{}
+\item 
+\mbox{\Hypertarget{unit__tests_8cpp_a8d23feea868a983c8c2b661e1e16972f}\label{unit__tests_8cpp_a8d23feea868a983c8c2b661e1e16972f}} 
+\#define {\bfseries RED}~\char`\"{}\textbackslash{}033\mbox{[}1;31m\char`\"{}
+\item 
+\mbox{\Hypertarget{unit__tests_8cpp_acfbc006ea433ad708fdee3e82996e721}\label{unit__tests_8cpp_acfbc006ea433ad708fdee3e82996e721}} 
+\#define {\bfseries GREEN}~\char`\"{}\textbackslash{}033\mbox{[}1;32m\char`\"{}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{unit__tests_8cpp_a682d98338fd06fa9157926bbbc3dd3de}\label{unit__tests_8cpp_a682d98338fd06fa9157926bbbc3dd3de}} 
+bool \mbox{\hyperlink{unit__tests_8cpp_a682d98338fd06fa9157926bbbc3dd3de}{Is\+\_\+right\+\_\+answer}} (\mbox{\hyperlink{structseparate__test}{separate\+\_\+test}} test)
+\begin{DoxyCompactList}\small\item\em The function compares the answer entered into the system with the one issued by the program, and if there is a discrepancy, it reports an error. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{unit__tests_8cpp_adf50b1357a9025e63df6eed075d86ca0}\label{unit__tests_8cpp_adf50b1357a9025e63df6eed075d86ca0}} 
+void \mbox{\hyperlink{unit__tests_8cpp_adf50b1357a9025e63df6eed075d86ca0}{Mistake\+\_\+print}} (int number, \mbox{\hyperlink{structseparate__test}{separate\+\_\+test}} Tests\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em The function prints an error message to the console. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{unit__tests_8cpp_a4bafe0980e09a473dcc63c211f6a81a3}{Run\+\_\+tests}} ()
+\begin{DoxyCompactList}\small\item\em function that runs the verification of pre-\/prepared tests and provides information about the verification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structseparate__test}{separate\+\_\+test}} {\bfseries Tests} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\Hypertarget{unit__tests_8cpp_a0701b7fdaf12aaf9e55fb6d4619ae90b}\label{unit__tests_8cpp_a0701b7fdaf12aaf9e55fb6d4619ae90b}} 
+const int {\bfseries number\+\_\+of\+\_\+tests} = sizeof(Tests) / sizeof(Tests\mbox{[}0\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Unit test file. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{unit__tests_8cpp_a4bafe0980e09a473dcc63c211f6a81a3}\label{unit__tests_8cpp_a4bafe0980e09a473dcc63c211f6a81a3}} 
+\index{unit\_tests.cpp@{unit\_tests.cpp}!Run\_tests@{Run\_tests}}
+\index{Run\_tests@{Run\_tests}!unit\_tests.cpp@{unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{Run\_tests()}{Run\_tests()}}
+{\footnotesize\ttfamily int Run\+\_\+tests (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+function that runs the verification of pre-\/prepared tests and provides information about the verification. 
+
+The implementation of this function contains a function for comparing prepared answers, and the answers issued by the Solve\+\_\+equation function, as well as a function for outputting test results to the console 
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{unit__tests_8cpp_aeb87448ba14b9f1dad27eb8a94f0b394}\label{unit__tests_8cpp_aeb87448ba14b9f1dad27eb8a94f0b394}} 
+\index{unit\_tests.cpp@{unit\_tests.cpp}!Tests@{Tests}}
+\index{Tests@{Tests}!unit\_tests.cpp@{unit\_tests.cpp}}
+\doxysubsubsection{\texorpdfstring{Tests}{Tests}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structseparate__test}{separate\+\_\+test}} Tests\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=     \{\{\{\{  1,  2,  -\/3\}, \{ 0, 0, NO\_ROOT\}\},\{ TWO\_ROOTS,    1,   -\/3\}\},}
+\DoxyCodeLine{                              \{\{\{  0,  0,   0\}, \{ 0, 0, NO\_ROOT\}\},\{ INF\_ROOTS,    0,    0\}\},}
+\DoxyCodeLine{                              \{\{\{  0,  2,  -\/4\}, \{ 0, 0, NO\_ROOT\}\},\{  ONE\_ROOT,    2,    0\}\},}
+\DoxyCodeLine{                              \{\{\{  0,  0,   5\}, \{ 0, 0, NO\_ROOT\}\},\{   NO\_ROOT,    0,    0\}\}, }
+\DoxyCodeLine{                              \{\{\{  1,  0,  -\/4\}, \{ 0, 0, NO\_ROOT\}\},\{ TWO\_ROOTS,    2,   -\/2\}\}, }
+\DoxyCodeLine{                              \{\{\{  1,  2,   3\}, \{ 0, 0, NO\_ROOT\}\},\{   NO\_ROOT,    0,    0\}\}, }
+\DoxyCodeLine{                              \{\{\{  1, -\/6,   9\}, \{ 0, 0, NO\_ROOT\}\},\{  ONE\_ROOT,    3,    0\}\}, }
+\DoxyCodeLine{                              \{\{\{  4, -\/8,   0\}, \{ 0, 0, NO\_ROOT\}\},\{ TWO\_ROOTS,    0,    2\}\},}
+\DoxyCodeLine{                              \{\{\{  1, -\/1,  -\/6\}, \{ 0, 0, NO\_ROOT\}\},\{ TWO\_ROOTS,    3,   -\/2\}\}\}}
+
+\end{DoxyCode}
