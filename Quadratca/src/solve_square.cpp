@@ -20,10 +20,10 @@
 */
 
 int Solve_linear_equation (double * coef_two, double * coef_three, double * x1, int * n_roots) { 
-    assert(coef_two != NULL);
-    assert(coef_three != NULL);
-    assert(x1 != NULL);
-    assert(n_roots != NULL);
+    assert(coef_two != 0);
+    assert(coef_three != 0);
+    assert(x1 != 0);
+    assert(n_roots != 0);
 
     if (Comparison_zero(*coef_two)) {
         *n_roots = (Comparison_zero(*coef_three)) ? INF_ROOTS : NO_ROOT;
@@ -44,12 +44,12 @@ int Solve_linear_equation (double * coef_two, double * coef_three, double * x1, 
 
 
 int Solve_quadratic_equation(quadratic_components * components) {
-    assert(components->coefficients.coef_one != NULL);
-    assert(components->coefficients.coef_two != NULL);
-    assert(components->coefficients.coef_three != NULL);
-    assert(components->roots.x1 != NULL);
-    assert(components->roots.x2 != NULL);
-    assert(components->roots.n_roots != NULL);
+    assert(components->coefficients.coef_one != 0);
+    assert(components->coefficients.coef_two != 0);
+    assert(components->coefficients.coef_three != 0);
+    assert(components->roots.x1 != 0);
+    assert(components->roots.x2 != 0);
+    assert(components->roots.n_roots != 0);
 
     double discriminant = (components->coefficients.coef_two) * (components->coefficients.coef_two)
                           - 4 * (components->coefficients.coef_one) * (components->coefficients.coef_three); 

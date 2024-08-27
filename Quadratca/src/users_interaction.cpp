@@ -138,8 +138,8 @@ void Data_entry(quadratic_coefficients * coefficients) {
 
 void Terminal_interface(int argc, char * argv[]){ 
     if (argc == 1) { 
-        printf("Add flag to the console, if you don't know flag, add -help\n");
-        return;
+        printf("Add flag to the console, if you don't know flag, add --help\n");
+        return; 
 
     } else {
         is_number_flag is_flag = {};     

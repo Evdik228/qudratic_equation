@@ -54,7 +54,7 @@ void Solution_generation_linear_equation(double b, double c) {
         double x = -c/b;
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, "> $%.2g*x + %.2g = 0$  — The required equation.\n",b,c);
+        fprintf(add_file, "> $%.2gx + %.2g = 0$  — The required equation.\n",b,c);
         fprintf(add_file, "- One root: %.2g\n", x);
         fprintf(add_file, "## 2 Solving\n");
         fprintf(add_file, " > First, let's analyze the coefficient a, it is equal to zero, therefore we will solve the linear equation.\n");
@@ -85,7 +85,7 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
 
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, ">$%.2g*x^2 + %.2gx + %.2g = 0$  — The required equation.\n",a,b,c);
+        fprintf(add_file, ">$%.2gx^2 + %.2gx + %.2g = 0$  — The required equation.\n",a,b,c);
         fprintf(add_file, " - First root: $(\\textbf{x = %.2g)}$.\n",x1);
         fprintf(add_file, " - Second root: $(\\textbf{x = %.2g)}$.\n",x2);
         fprintf(add_file, "## 2 Solving\n");
@@ -107,7 +107,7 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
 
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, ">$%.2g*x^2 + %.2gx + %.2g = 0$  — The required equation.\n",a,b,c);
+        fprintf(add_file, ">$%.2gx^2 + %.2gx + %.2g = 0$  — The required equation.\n",a,b,c);
         fprintf(add_file, " - One root: $(\\textbf{x = %.2g)}$.\n",x1);
         fprintf(add_file, "## 2 Solving\n");
         fprintf(add_file, " > First, let's analyze the coefficient a, it is not equal to zero, therefore we will solve the quadratic equation. Let's calculate the discriminant!\n");
@@ -125,7 +125,7 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
     } else {
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, ">$%.2g*x^2 + %.2gx + %.2g = 0$  — The required equation.\n",a,b,c);
+        fprintf(add_file, ">$%.2gx^2 + %.2gx + %.2g = 0$  — The required equation.\n",a,b,c);
         fprintf(add_file, "### No roots!\n");
         fprintf(add_file, "## 2 Solving\n");
         fprintf(add_file, " > First, let's analyze the coefficient a, it is not equal to zero, therefore we will solve the quadratic equation. Let's calculate the discriminant!\n");
