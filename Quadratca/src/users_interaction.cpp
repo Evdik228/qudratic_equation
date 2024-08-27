@@ -126,7 +126,7 @@ void Data_entry(quadratic_coefficients * coefficients) {
         printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: ");
         
         if (!Clean_boofer()){
-            exit(0); //TODO: change 
+            exit(0); 
         }
 
     }  
@@ -146,7 +146,7 @@ void Terminal_interface(int argc, char * argv[]){
         is_flag.add_file_name = (char *)add_file_name_default;
         is_flag.scan_file_name = (char *)scan_file_name_default;
         for (int number_flag = 1; number_flag < argc; number_flag++){
-            int result = Check_flag(argv[number_flag], &is_flag);   //TODO: check file name 
+            int result = Check_flag(argv[number_flag], &is_flag);  
             if (result == 1 && number_flag + 1 != argc) {
 
                 if (strcmp(argv[number_flag],  file) == 0 && argv[number_flag + 1][0] != '-') {

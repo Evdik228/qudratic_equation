@@ -1,9 +1,6 @@
 #include <stdio.h>
 
-#include "../include/users_interaction.h"
-
-// TODO: reed about make
-// TODO: divide into folders   
+#include "../include/users_interaction.h" 
 
 /**
  * @file
@@ -23,10 +20,6 @@ int main(int argc, char *argv[])
 
     Terminal_interface(argc, argv);
 
-    
-
-
- 
 
     return 0;
 

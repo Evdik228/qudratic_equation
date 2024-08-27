@@ -14,8 +14,6 @@
 
 /*function initialization*/
 
-//TODO: isfinite and nan
-
 
 /**
  * @brief Function for solving a linear equation.
@@ -58,9 +56,11 @@ int Solve_quadratic_equation(quadratic_components * components) {
 
     if (discriminant < 0) { 
         components->roots.n_roots = NO_ROOT; 
+
     } else if (Comparison_zero(discriminant)) { 
         components->roots.x1 = -(components->coefficients.coef_two) / (2 * (components->coefficients.coef_one));
         components->roots.n_roots = ONE_ROOT;
+
     } else {
                                             
         components->roots.x1 = (-(components->coefficients.coef_two) - sqrt(discriminant)) 

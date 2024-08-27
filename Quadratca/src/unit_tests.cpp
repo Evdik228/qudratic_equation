@@ -49,11 +49,10 @@ separate_test Tests [] =     {{{{  1,  2,  -3}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,  
                               {{{  1, -6,   9}, { 0, 0, NO_ROOT}},{  ONE_ROOT,    3,    0}}, 
                               {{{  4, -8,   0}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    0,    2}},
                               {{{  1, -1,  -6}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    3,   -2}}}; 
-// const int number_of_tests = 9;
+
 
 const int number_of_tests = sizeof(Tests) / sizeof(Tests[0]);
 
-/*Check responses*/
 
 
 /**

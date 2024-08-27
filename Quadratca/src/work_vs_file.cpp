@@ -56,7 +56,7 @@ void File_enterface(int  flag_add, char* scan_file_name, char* add_file_name){
         scan_file = fopen(scan_file_name_default, "r");
     } 
 
-    fscanf (scan_file ,"%lg %lg %lg", &(file_components.coefficients.coef_one),    //TODO: checking input data 
+    fscanf (scan_file ,"%lg %lg %lg", &(file_components.coefficients.coef_one),   
             &(file_components.coefficients.coef_two), &(file_components.coefficients.coef_three)); 
             fclose (scan_file);
 
