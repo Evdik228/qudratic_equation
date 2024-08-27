@@ -17,11 +17,54 @@
 
 
 
-void Solution_generation_linear_equation(int b, int c) {
+void Solution_generation_linear_equation(double b, double c) {
+
+    FILE *add_file;
+
+    add_file = fopen("solve.md", "w");
+
     PRINT_GREEN("\nCheck the solution in the file solve.md\n\n");
+    if (b == 0 && c == 0){
+        fprintf(add_file, "### Detailed visual solution of the equation\n");
+        fprintf(add_file, " ## 1 Equation and answer\n");
+        fprintf(add_file, "> $0*x = 0$  — The required equation.\n");
+        fprintf(add_file, "### Infinity roots!\n");
+        fprintf(add_file, "## 2 Solving\n");
+        fprintf(add_file, " > First, let's analyze the coefficient a, it is equal to zero, therefore we will solve the linear equation.\n");
+        fprintf(add_file, "In our case:  $b = 0$, and $c = 0$ hence $\\Rightarrow$\n");
+        fprintf(add_file, "### Infinitely many roots!\n");
+        fprintf(add_file, ">We hope that this solution was useful, thank you for using this program!\n");
+    }else if(b == 0){
+
+        fprintf(add_file, "### Detailed visual solution of the equation\n");
+        fprintf(add_file, " ## 1 Equation and answer\n");
+        fprintf(add_file, "> $%.2f = 0$  — The required equation.\n",c);
+        fprintf(add_file, "### No roots!\n");
+        fprintf(add_file, "## 2 Solving\n");
+        fprintf(add_file, " > First, let's analyze the coefficient a, it is equal to zero, therefore we will solve the linear equation.\n");
+        fprintf(add_file, "In our case:  $b = 0$ , hence $\\Rightarrow$\n");
+        fprintf(add_file, "### No roots! \n");
+        fprintf(add_file, ">We hope that this solution was useful, thank you for using this program!\n");
+
+    }else {
+        double x = -c/b;
+        fprintf(add_file, "### Detailed visual solution of the equation\n");
+        fprintf(add_file, " ## 1 Equation and answer\n");
+        fprintf(add_file, "> $%.2f*x + %.2f = 0$  — The required equation.\n",b,c);
+        fprintf(add_file, "- One root: %.2f\n", x);
+        fprintf(add_file, "## 2 Solving\n");
+        fprintf(add_file, " > First, let's analyze the coefficient a, it is equal to zero, therefore we will solve the linear equation.\n");
+        fprintf(add_file, "In our case:  $b = 0$ , hence $\\Rightarrow$\n");
+        fprintf(add_file, "Let's calculate the root of the linear equation using the formula $x = \\frac{-c}{b}$\n");
+        fprintf(add_file, "$$x = \\frac{-(%.2f)}{%.2f}$$\n", c,b);
+        fprintf(add_file, ">Let's write down the roots of the desired equation\n");
+        fprintf(add_file, "$$x = %.2f $$ \n", x);
+        fprintf(add_file, ">We hope that this solution was useful, thank you for using this program!\n");
+
+        fclose(add_file);
+    }
+
 }
-
-
 
 void Solution_generation_quadratic_equation(double a, double b, double c) {
     PRINT_GREEN("\nCheck the solution in the file solve.md\n\n");
@@ -38,7 +81,7 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
 
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, ">$%.2f*x^2 - %.2fx + %.2f$  — The required equation.\n",a,b,c);
+        fprintf(add_file, ">$%.2f*x^2 - %.2fx + %.2f = 0$  — The required equation.\n",a,b,c);
         fprintf(add_file, " - First root: $(\\textbf{x = %.2f)}$.\n",x1);
         fprintf(add_file, " - Second root: $(\\textbf{x = %.2f)}$.\n",x2);
         fprintf(add_file, "## 2 Solving\n");
@@ -58,7 +101,7 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
 
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, ">$%.2f*x^2 - %.2fx + %.2f$  — The required equation.\n",a,b,c);
+        fprintf(add_file, ">$%.2f*x^2 - %.2fx + %.2f = 0$  — The required equation.\n",a,b,c);
         fprintf(add_file, " - One root: $(\\textbf{x = %.2f)}$.\n",x1);
         fprintf(add_file, "## 2 Solving\n");
         fprintf(add_file, " > First, let's analyze the coefficient a, it is not equal to zero, therefore we will solve the quadratic equation. Let's calculate the discriminant!\n");
@@ -75,7 +118,7 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
     } else {
         fprintf(add_file, "### Detailed visual solution of the equation\n");
         fprintf(add_file, " ## 1 Equation and answer\n");
-        fprintf(add_file, ">$%.2f*x^2 - %.2fx + %.2f$  — The required equation.\n",a,b,c);
+        fprintf(add_file, ">$%.2f*x^2 - %.2fx + %.2f = 0$  — The required equation.\n",a,b,c);
         fprintf(add_file, "### No roots!\n");
         fprintf(add_file, "## 2 Solving\n");
         fprintf(add_file, " > First, let's analyze the coefficient a, it is not equal to zero, therefore we will solve the quadratic equation. Let's calculate the discriminant!\n");
@@ -85,10 +128,11 @@ void Solution_generation_quadratic_equation(double a, double b, double c) {
         fprintf(add_file, "$D < 0 \\Rightarrow$ this equation has no solutions\n");
         fprintf(add_file, "### No roots! \n");
         fprintf(add_file, ">We hope that this solution was useful, thank you for using this program!\n");
+        
+        fclose(add_file);
     } 
 
 }
-
 
 
 void Solution_generation(){
