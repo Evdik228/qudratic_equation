@@ -28,22 +28,18 @@ bool Comparison_zero(double a){
 */
 
 bool Comparison_double(double a, double b){
-    if (fabs(a - b) <= EPSILON){
-        return true;
-    }
-    return false; 
+    Comparison_zero(a - b);                  
 }
-
 
 /**
  * @brief clears the buffer in case of incorrect data entry
 */
-bool Clean_boofer(){
+bool Clean_buffer(){
     while (true){
         int ch = getchar();
         if (isspace(ch)) {
             break;
-        } else if(ch == EOF){     
+        } else if (ch == EOF) {     
             return false;
         }
     }

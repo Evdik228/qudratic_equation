@@ -20,7 +20,6 @@ int main(int argc, char *argv[])
 
     Terminal_interface(argc, argv);
 
-
     return 0;
 
 }

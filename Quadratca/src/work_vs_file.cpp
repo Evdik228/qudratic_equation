@@ -19,14 +19,14 @@
  * it creates a new file in the directory and outputs data to it
 */
 
-void Put_data_file(int n_roots, double x1, double x2, char* add_file_name){
-    printf("result on file!\n");
+void Put_data_file(int n_roots, double x1, double x2, char* add_file_name) {
+    printf("result in file!\n");
 
-    FILE *add_file;
+    FILE *add_file = NULL;  
 
     if ((add_file = fopen(add_file_name, "w")) == NULL) {
         printf("There is no file with this name, data in file by default");
-        add_file = fopen(add_file_name_default, "w");
+        add_file = fopen(ADD_FILE_NAME_DEFAULT, "w");
     } 
 
     switch (n_roots)
@@ -45,7 +45,7 @@ void Put_data_file(int n_roots, double x1, double x2, char* add_file_name){
     fclose(add_file);
 }
 
-void File_enterface(int  flag_add, char* scan_file_name, char* add_file_name){
+void File_interface(int  flag_add, char* scan_file_name, char* add_file_name){
 
     FILE *scan_file;
 
@@ -53,12 +53,12 @@ void File_enterface(int  flag_add, char* scan_file_name, char* add_file_name){
 
     if ((scan_file = fopen(scan_file_name, "r")) == NULL) {
         printf("There is no file with this name, open file by default");
-        scan_file = fopen(scan_file_name_default, "r");
+        scan_file = fopen(SCAN_FILE_NAME_DEFAULT, "r");
     } 
 
     fscanf (scan_file ,"%lg %lg %lg", &(file_components.coefficients.coef_one),   
             &(file_components.coefficients.coef_two), &(file_components.coefficients.coef_three)); 
-            fclose (scan_file);
+    fclose (scan_file);
 
     Solves_equation(&file_components);
 
@@ -67,6 +67,4 @@ void File_enterface(int  flag_add, char* scan_file_name, char* add_file_name){
     } else {
         Data_output(file_components.roots);
     }
-
-
 }

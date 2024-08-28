@@ -18,7 +18,7 @@
 #define GREEN  "\033[1;32m" 
 
 #define PRINT_RED(text)  printf(RED text RESET);
-#define PRINT_GREEN(text) printf(GREEN text RESET)
+#define PRINT_GREEN(text) printf(GREEN text RESET)                          
  
 /**
  * @brief Contains the correct roots and the correct number of roots (hammered into the system)
@@ -29,32 +29,29 @@
 
 struct right_answers
 {
-    int                  n_roots_right;
-    double               x1_right;
-    double               x2_right;
+    int    n_roots_right;
+    double x1_right;
+    double x2_right;
 };
 
 struct separate_test
 {   
     quadratic_components component;
-    right_answers answers;
-        
+    right_answers answers;     
 };
 
-separate_test Tests [] =     {{{{  1,  2,  -3}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    1,   -3}},
-                              {{{  0,  0,   0}, { 0, 0, NO_ROOT}},{ INF_ROOTS,    0,    1}},
-                              {{{  0,  2,  -4}, { 0, 0, NO_ROOT}},{  ONE_ROOT,    2,    0}},
-                              {{{  0,  0,   5}, { 0, 0, NO_ROOT}},{   NO_ROOT,    0,    0}}, 
-                              {{{  1,  0,  -4}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    2,   -2}}, 
-                              {{{  1,  2,   3}, { 0, 0, NO_ROOT}},{   NO_ROOT,    0,    0}}, 
-                              {{{  1, -6,   9}, { 0, 0, NO_ROOT}},{  ONE_ROOT,    3,    0}}, 
-                              {{{  4, -8,   0}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    0,    2}},
-                              {{{  1, -1,  -6}, { 0, 0, NO_ROOT}},{ TWO_ROOTS,    3,   -2}}}; 
+separate_test Tests [] =   {{{{ 1,  2, -3}, { 0, 0, NO_ROOT}}, { TWO_ROOTS, 1, -3}},
+                            {{{ 0,  0,  0}, { 0, 0, NO_ROOT}}, { INF_ROOTS, 0,  1}},
+                            {{{ 0,  2, -4}, { 0, 0, NO_ROOT}}, {  ONE_ROOT, 2,  0}},
+                            {{{ 0,  0,  5}, { 0, 0, NO_ROOT}}, {   NO_ROOT, 0,  0}}, 
+                            {{{ 1,  0, -4}, { 0, 0, NO_ROOT}}, { TWO_ROOTS, 2, -2}}, 
+                            {{{ 1,  2,  3}, { 0, 0, NO_ROOT}}, {   NO_ROOT, 0,  0}}, 
+                            {{{ 1, -6,  9}, { 0, 0, NO_ROOT}}, {  ONE_ROOT, 3,  0}}, 
+                            {{{ 4, -8,  0}, { 0, 0, NO_ROOT}}, { TWO_ROOTS, 0,  2}},
+                            {{{ 1, -1, -6}, { 0, 0, NO_ROOT}}, { TWO_ROOTS, 3, -2}}}; 
 
 
 const int number_of_tests = sizeof(Tests) / sizeof(Tests[0]);
-
-
 
 /**
  * @brief The function compares the answer entered into the system with the one issued by the program,

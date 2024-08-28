@@ -20,7 +20,7 @@
  * @brief Checks which flags have been entered into the system
 */
 
-void Execlusion_flags(is_number_flag * is_number) {
+void Execution_flags(is_number_flag * is_number) {
     if (is_number->flag_solve_equation == 1) {
         Solve_equation(); 
     } 
@@ -28,7 +28,7 @@ void Execlusion_flags(is_number_flag * is_number) {
         Run_tests();
     } 
     if(is_number->flag_file == 1) {
-        File_enterface(is_number->flag_add, is_number->scan_file_name, is_number->add_file_name);
+        File_interface(is_number->flag_add, is_number->scan_file_name, is_number->add_file_name);
     } 
     if(is_number->flag_help) {
         Print_help();
@@ -44,22 +44,22 @@ void Execlusion_flags(is_number_flag * is_number) {
 */
 
 int Check_flag(char* flag, is_number_flag *is_number) {
-    if (strcmp(sqe, flag) == 0) { 
+    if (strcmp(SQE, flag) == 0) { 
         is_number->flag_solve_equation = 1;
         return 0;          
-    } else if (strcmp(test, flag) == 0) {     
+    } else if (strcmp(TEST, flag) == 0) {     
         is_number->flag_check_answers = 1;
         return 0;
-    } else if (strcmp(help, flag) == 0) {
+    } else if (strcmp(HELP, flag) == 0) {
         is_number->flag_help = 1;
         return 0;
-    } else if (strcmp(file, flag) == 0) {
+    } else if (strcmp(WORK_FILE, flag) == 0) {
         is_number->flag_file = 1;
         return 1;              
-    } else if (strcmp(add, flag) == 0  && is_number->flag_file == 1) {
+    } else if (strcmp(ADD, flag) == 0  && is_number->flag_file == 1) {
         is_number->flag_add = 1; 
         return 1;
-    } else if (strcmp(solving, flag) == 0) {
+    } else if (strcmp(SOLVING, flag) == 0) {
         is_number->flag_solving_generation = 1; 
         return 1;
     } else {
@@ -125,8 +125,12 @@ void Data_entry(quadratic_coefficients * coefficients) {
         printf("You have an input error, please enter the correct values!\n");
         printf("Enter the coefficients of a quadratic equation of the form ax^2 + b^x +c: ");
         
-        if (!Clean_boofer()){
-            exit(0); 
+        if (!Clean_buffer()){ 
+            printf("\nError in input data, we use our data\n");
+            (coefficients->coef_one) = 1;
+            (coefficients->coef_two) = 2;
+            (coefficients->coef_three) = 3;
+            return;
         }
 
     }  
@@ -136,34 +140,38 @@ void Data_entry(quadratic_coefficients * coefficients) {
  * @brief Reads and processes data about entered flags
 */
 
-void Terminal_interface(int argc, char * argv[]){ 
+void Terminal_interface(int argc, char * argv[]) { 
     if (argc == 1) { 
         printf("Add flag to the console, if you don't know flag, add --help\n");
         return; 
 
     } else {
         is_number_flag is_flag = {};     
-        is_flag.add_file_name = (char *)add_file_name_default;
-        is_flag.scan_file_name = (char *)scan_file_name_default;
-        for (int number_flag = 1; number_flag < argc; number_flag++){
+
+        is_flag.add_file_name = (char *)ADD_FILE_NAME_DEFAULT;
+        is_flag.scan_file_name = (char *)SCAN_FILE_NAME_DEFAULT;
+
+        for (int number_flag = 1; number_flag < argc; number_flag++) {
             int result = Check_flag(argv[number_flag], &is_flag);  
+            
             if (result == 1 && number_flag + 1 != argc) {
 
-                if (strcmp(argv[number_flag],  file) == 0 && argv[number_flag + 1][0] != '-') {
+                if (strcmp(argv[number_flag],  WORK_FILE) == 0 && argv[number_flag + 1][0] != '-') {
                     is_flag.scan_file_name = argv[number_flag + 1];
-                    number_flag ++;
+                    number_flag++;
 
-                } else if (strcmp(argv[number_flag], add) == 0  && argv[number_flag + 1][0] != '-') {
+                } else if (strcmp(argv[number_flag], ADD) == 0  && argv[number_flag + 1][0] != '-') {
                     is_flag.add_file_name = argv[number_flag + 1];
-                    number_flag ++;
+                    number_flag++;
                     
                 }
-            } else if (result == -1){
+            } else if (result == -1) {
                 break;
             }
 
         }
-        Execlusion_flags(&is_flag);
+        Execution_flags(&is_flag); 
 
     }   
 }
+

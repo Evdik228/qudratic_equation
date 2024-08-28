@@ -9,7 +9,7 @@ bool Comparison_zero(double a);
 /**
  * @brief clears the buffer in case of incorrect data entry
 */
-bool Clean_boofer();
+bool Clean_buffer();
 
 /**
  * @brief Compares two numbers of type double, to avoid errors due to inaccuracy

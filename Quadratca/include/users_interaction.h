@@ -3,21 +3,13 @@
 
 #include "../include/solve_square.h"
 
-inline const char* sqe     =  "--sqe";
-inline const char* test    =  "--test";      
-inline const char* file    =  "--file"; 
-inline const char* add     =  "--add"; 
-inline const char* help    =  "--help";
-inline const char* solving = "--solving"; 
+inline const char* SQE     =  "--sqe";
+inline const char* TEST    =  "--test";      
+inline const char* WORK_FILE    =  "--file"; 
+inline const char* ADD     =  "--add"; 
+inline const char* HELP    =  "--help";
+inline const char* SOLVING = "--solving"; 
 
-
-enum number_flag
-{
-    flag_HELP           = 1,
-    flag_SOLVE_EQUATION = 2,
-    flag_CHECK_ANSWERS  = 3,
-    flag_FILE           = 4,
-};
 
 /**
  * @brief structure to determine which flag is called
